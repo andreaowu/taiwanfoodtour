@@ -29,7 +29,7 @@ export default function SiteHeader() {
         theme="dark"
         mode="horizontal"
         items={menuItems}
-        style={{ flex: 1, marginLeft: '42%' }}
+        style={{ flex: 1, marginLeft: '24px' }}
       />
     </Header>
   )

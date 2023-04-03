@@ -1,0 +1,19 @@
+[debug] [2023-04-03T15:15:05.171Z] ----------------------------------------------------------------------
+[debug] [2023-04-03T15:15:05.173Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only hosting
+[debug] [2023-04-03T15:15:05.174Z] CLI Version:   11.25.2
+[debug] [2023-04-03T15:15:05.174Z] Platform:      darwin
+[debug] [2023-04-03T15:15:05.174Z] Node Version:  v18.2.0
+[debug] [2023-04-03T15:15:05.174Z] Time:          Tue Apr 04 2023 00:15:05 GMT+0900 (Japan Standard Time)
+[debug] [2023-04-03T15:15:05.175Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-03T15:15:05.237Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-03T15:15:05.237Z] > authorizing via signed-in user (andreaowu@gmail.com)
+[debug] [2023-04-03T15:15:05.237Z] [iam] checking project taiwanfood-5318c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-04-03T15:15:05.239Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/taiwanfood-5318c:testIamPermissions [none]
+[debug] [2023-04-03T15:15:05.239Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/taiwanfood-5318c:testIamPermissions x-goog-quota-user=projects/taiwanfood-5318c
+[debug] [2023-04-03T15:15:05.239Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/taiwanfood-5318c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-03T15:15:06.042Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/taiwanfood-5318c:testIamPermissions 200
+[debug] [2023-04-03T15:15:06.042Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/taiwanfood-5318c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-03T15:15:06.043Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/taiwanfood-5318c [none]
+[debug] [2023-04-03T15:15:06.417Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/taiwanfood-5318c 200
+[debug] [2023-04-03T15:15:06.417Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/taiwanfood-5318c {"projectId":"taiwanfood-5318c","projectNumber":"229053190630","displayName":"taiwanfood","name":"projects/taiwanfood-5318c","resources":{"hostingSite":"taiwanfood-5318c","storageBucket":"taiwanfood-5318c.appspot.com","locationId":"asia-northeast1"},"state":"ACTIVE","etag":"1_11a6060c-57a1-4328-a9a9-1ad63f984cbd"}
