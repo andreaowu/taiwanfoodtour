@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { Card, Image, Layout, List, Typography } from 'antd';
+import { Card, Image, Layout, List, Typography } from 'antd'
 import styles from '../styles/Home.module.css'
-import SiteHeader from '../components/header';
-import SiteFooter from '../components/footer';
+import SiteHeader from '../components/header'
+import SiteFooter from '../components/footer'
 
 const { Content } = Layout;
 const { Text, Title } = Typography;

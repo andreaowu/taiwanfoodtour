@@ -1,5 +1,5 @@
-import { Image, Layout, Menu } from 'antd';
-import Link from 'next/link';
+import { Image, Layout, Menu } from 'antd'
+import Link from 'next/link'
 
 const { Header } = Layout;
 const menuItems = [

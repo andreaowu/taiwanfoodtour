@@ -1,78 +1,24 @@
 import Head from 'next/head'
-import { Card, Image, Layout, List, Typography } from 'antd';
+import { Card, Image, Layout, List, Typography } from 'antd'
 import styles from '../styles/Home.module.css'
 import SiteHeader from '../components/header'
+import SiteFooter from '../components/footer'
+import Link from 'next/link'
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 const { Text, Title } = Typography;
 
-const streetEatsItems = [
+const tours = [
   {
-    title: 'Rice ball',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
+    title: 'Street Eats',
+    description: 'Pick from a list of street food to try!',
+    href: 'streeteats',
     image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
   },
   {
-    title: 'Bubble tea',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
-    image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
-  },
-  {
-    title: 'Bread',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
-    image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
-  },
-  {
-    title: 'Dumplings in soup',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
-    image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
-  },
-  {
-    title: 'Red chili-oil dumplings',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
-    image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
-  },
-  {
-    title: 'Stinky tofu',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
-    image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
-  },
-  {
-    title: 'Green onion pancake',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
-    image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
-  },
-  {
-    title: 'Oyster vermicelli',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
-    image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
-  },
-  {
-    title: 'Beef noodle soup',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
-    image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
-  },
-  {
-    title: 'Oyster pancake',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
-    image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
-  },
-  {
-    title: 'Meat stew',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
-    image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
-  },
-  {
-    title: 'Rice noodle soup',
-    description: 'a ball of sticky rice with a variety of ingredients inside',
-    image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
-  },
-];
-
-const nightmarkets = [
-  {
-    title: 'Shilin',
-    description: 'most popular, biggest in Taipei, and crowded',
+    title: 'Nightmarket',
+    description: 'Let\'s visit a nightmarket together!',
+    href: 'nightmarket',
     image: 'https://firebasestorage.googleapis.com/v0/b/taiwanfood-5318c.appspot.com/o/bread.jpeg?alt=media&token=20a72d8c-c98c-4ee4-a430-6e0f6dbb068e'
   },
 ]
@@ -98,63 +44,28 @@ export default function Home() {
           </Text>
         </Content>
         <Content className={[styles.content, styles.streetEats]}>
-          <Title className={styles.tourTitle}>
-            Street Eats Tour
-          </Title>
-          <Text className={styles.tourDescription}>
-            Depending on what you'd like to eat, you can have a taste of:
-          </Text>
           <List
-            grid={{ gutter: 16, column: 4 }}
-            dataSource={streetEatsItems}
+            grid={{ gutter: 16, column: 3 }}
+            dataSource={tours}
             renderItem={(item) => (
-              <List.Item>
-                <Card bodyStyle={{ padding: '12px 24px 24px' }} title={item.title}>
-                  <Text>
-                    {item.description}
-                  </Text>
-                  <Image
-                    style={{ paddingTop: '8px' }}
-                    preview={false}
-                    src={item.image}
-                  />
-                </Card>
-              </List.Item>
+              <Link href={item.href}>
+                <List.Item>
+                  <Card bodyStyle={{ padding: '12px 24px 24px' }} title={item.title}>
+                    <Text>
+                      {item.description}
+                    </Text>
+                    <Image
+                      style={{ paddingTop: '8px' }}
+                      preview={false}
+                      src={item.image}
+                    />
+                  </Card>
+                </List.Item>
+              </Link>
             )}
           />
         </Content>
-        <Content className={[styles.content, styles.nightmarket]}>
-          <Title className={styles.tourTitle}>
-            Nightmarket Tour
-          </Title>
-          <Text className={styles.tourDescription}>
-            Heard about the famous Taiwan nightmarkets but unsure what to eat there? Unsure what you're
-            looking at when you go? Sign up for a tour to explore a Taiwan nightmarket - you can pick
-            which one you want to go to. Below are a few suggestions, or if you don't know, just sign up
-            and be surprised!
-          </Text>
-          <List
-            grid={{ gutter: 16, column: 4 }}
-            dataSource={nightmarkets}
-            renderItem={(item) => (
-              <List.Item>
-                <Card bodyStyle={{ padding: '12px 24px 24px' }} title={item.title}>
-                  <Text>
-                    {item.description}
-                  </Text>
-                  <Image
-                    style={{ paddingTop: '8px' }}
-                    preview={false}
-                    src={item.image}
-                  />
-                </Card>
-              </List.Item>
-            )}
-          />
-        </Content>
-        <Footer style={{ textAlign: 'center' }}>
-          Taiwan Free Food Tour ©2023
-        </Footer>
+        <SiteFooter />
       </Layout>
     </>
   )
